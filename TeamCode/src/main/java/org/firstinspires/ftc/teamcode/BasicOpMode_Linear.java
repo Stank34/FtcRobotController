@@ -51,13 +51,14 @@ import com.qualcomm.robotcore.util.Range;
  */
 
 @TeleOp(name="Basic: Linear OpMode", group="Linear Opmode")
-@Disabled
 public class BasicOpMode_Linear extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor leftDrive = null;
-    private DcMotor rightDrive = null;
+    private DcMotor frontLeftMotor = null;
+    private DcMotor frontRightMotor;
+    private DcMotor backLeftMotor;
+    private DcMotor backRightMotor;
 
     @Override
     public void runOpMode() {
