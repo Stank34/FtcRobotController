@@ -36,8 +36,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name="v.1: Linear OpMode", group="Linear Opmode")
-@Disabled
+@TeleOp(name="v.1.11: Linear OpMode", group="Linear Opmode")
 public class OpMode_v1_Linear extends LinearOpMode {
 
     // Declare OpMode members.
@@ -46,6 +45,7 @@ public class OpMode_v1_Linear extends LinearOpMode {
     private DcMotor frontRight = null;
     private DcMotor backRight = null;
     private DcMotor backLeft = null;
+
 
     @Override
     public void runOpMode() {
@@ -83,7 +83,7 @@ public class OpMode_v1_Linear extends LinearOpMode {
 
             // POV Mode uses left stick to go forward, and right stick to turn.
             // - This uses basic math to combine motions and is easier to drive straight.
-            double drive = -gamepad1.left_stick_y;
+            double drive = gamepad1.left_stick_y;
             double turn  =  gamepad1.right_stick_x;
             leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
             rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
@@ -106,3 +106,8 @@ public class OpMode_v1_Linear extends LinearOpMode {
         }
     }
 }
+/* TODO
+*   code top wheel
+*   code strafing
+*
+* */
